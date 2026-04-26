@@ -1,0 +1,14 @@
+# @package _global_
+
+defaults:
+  - dd_train_dexed
+  - override data: h5_surge
+  - override weight: default
+  - _self_
+
+experiment:
+  name: dd_surge
+
+model:
+  diffusion:
+    T: 165

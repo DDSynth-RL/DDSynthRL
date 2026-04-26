@@ -1,0 +1,86 @@
+metadata:
+  description: Local Surge XT sampling priors aligned with synth-permutations full spec
+  source: SURGE_XT_PARAM_SPEC (copied values; no runtime dependency)
+
+continuous:
+  a_feedback:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_filter_balance:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_highpass:
+    constant_val_p: 0.5
+    constant_val: 0.0
+  a_waveshaper_drive:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_osc_1_pitch:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_osc_2_pitch:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_osc_3_pitch:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  a_lfo_1_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_lfo_2_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_lfo_3_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_lfo_4_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_lfo_5_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_lfo_6_amplitude:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  a_pan:
+    constant_val_p: 0.5
+    constant_val: 0.5
+  fx_a1_output_mix:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  fx_a2_output_mix:
+    constant_val_p: 0.67
+    constant_val: 0.0
+  fx_a3_output_mix:
+    constant_val_p: 0.67
+    constant_val: 0.0
+
+categorical:
+  a_waveshaper_type:
+    weights: [4.0, 1.0, 1.0, 1.0, 1.0]
+  a_osc_1_mute:
+    weights: [0.9, 0.1]
+  a_osc_1_octave:
+    weights: [1.0, 1.0, 1.0, 6.0, 1.0, 1.0, 1.0]
+  a_osc_1_unison_voices:
+    weights: [3.0, 1.0, 1.0, 1.0]
+  a_osc_2_mute:
+    weights: [0.9, 0.1]
+  a_osc_2_octave:
+    weights: [1.0, 1.0, 1.0, 6.0, 1.0, 1.0, 1.0]
+  a_osc_2_unison_voices:
+    weights: [3.0, 1.0, 1.0, 1.0]
+  a_osc_3_mute:
+    weights: [0.9, 0.1]
+  a_osc_3_octave:
+    weights: [1.0, 1.0, 1.0, 6.0, 1.0, 1.0, 1.0]
+  a_osc_3_unison_voices:
+    weights: [3.0, 1.0, 1.0, 1.0]
+  a_fm_routing:
+    weights: [3.0, 1.0, 1.0, 1.0]
+  a_noise_mute:
+    weights: [0.33, 0.67]
+  a_ring_modulation_1x2_mute:
+    weights: [0.1, 0.9]
+  a_ring_modulation_2x3_mute:
+    weights: [0.1, 0.9]

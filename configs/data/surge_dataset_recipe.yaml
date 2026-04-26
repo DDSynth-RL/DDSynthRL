@@ -1,0 +1,48 @@
+paths:
+  output_root: dataset/surge
+  plugin_path: synth/Surge XT.vst3
+  preset_path: presets/surge-base.vstpreset
+  summary_path: configs/data/surge_params_summary.yaml
+  sampling_priors_path: configs/data/surge_sampling_priors.yaml
+
+dataset:
+  # synth-permutations / paper-aligned split:
+  # 200 train shards + 4 val shards + 1 test shard, with 10,000 samples per shard
+  # => train/val/test = 2,000,000 / 40,000 / 10,000
+  num_samples: 2050000
+  sample_rate: 44100
+  block_size: 2048
+  target_duration: 5.0
+  min_rms: 1.0e-6
+  max_tries: 100
+  seed: 1234
+  train_ratio: 0.975609756097561
+  val_ratio: 0.01951219512195122
+
+mel:
+  n_mels: 128
+  window_seconds: 0.025
+  frames_per_second: 100.0
+  window: hamming
+
+render:
+  preset_load_flush_seconds: 32.0
+  post_param_flush_seconds: 32.0
+  post_render_flush_seconds: 32.0
+  reset_between_renders: true
+
+midi:
+  allow_zero_velocity: false
+  fixed_note: null
+  fixed_velocity: null
+  fixed_duration: null
+
+runtime:
+  sample_batch_size: 32
+  log_interval: 500
+
+sharding:
+  shard_root: dataset/surge/shards
+  train_shards: 200
+  val_shards: 4
+  test_shards: 1

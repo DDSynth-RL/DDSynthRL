@@ -1,0 +1,9 @@
+_target_: lightning.pytorch.trainer.Trainer
+
+accelerator: auto
+devices: 1
+precision: 32
+enable_checkpointing: true
+enable_progress_bar: true
+num_sanity_val_steps: 0
+deterministic: false

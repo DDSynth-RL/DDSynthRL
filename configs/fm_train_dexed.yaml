@@ -1,0 +1,48 @@
+# @package _global_
+
+defaults:
+  - data: h5_dexed
+  - model: flow_matching
+  - trainer: default
+  - callbacks: default
+  - logger: wandb
+  - paths: default
+  - hydra: default
+  - _self_
+
+task_name: train
+
+experiment:
+  name: fm_dexed
+
+tags: ["dev", "flow_matching"]
+
+train: true
+test: false
+ckpt_path: null
+seed: 1234
+optimized_metric: val/wmfcc
+
+trainer:
+  accelerator: auto
+  devices: 1
+  precision: bf16-mixed
+  deterministic: false
+  gradient_clip_val: 0.5
+  limit_val_batches: 8
+
+data:
+  training:
+    batch_size: 32
+
+model:
+  validation:
+    render_batches: 8
+    nsynth_eval:
+      enable: true
+      batches: 8
+      seed: 1234
+      shuffle: false
+      shuffle_once: true
+      sample_size: 0
+      audio_root: dataset/nsynth/valid/audio

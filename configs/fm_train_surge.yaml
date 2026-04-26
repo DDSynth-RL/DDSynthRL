@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - fm_train_dexed
+  - override data: h5_surge
+  - _self_
+
+experiment:
+  name: fm_surge
+
+model:
+  vector_field:
+    projection:
+      num_params: 300
+  denoise_space:
+    _target_: src.utils.surge_denoise_space.SurgeDenoiseSpace
+    config_path: configs/data/surge_params_summary.yaml
+    scale_to_unit: true

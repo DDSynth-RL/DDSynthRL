@@ -1,0 +1,120 @@
+_target_: src.models.flow_matching_module.FlowMatchingModule
+_recursive_: false
+
+compile: false
+p_time: uniform
+w_time: none
+coupling: ot
+oversample_ot: 1.0
+rectified_sigma_min: 0.0
+sample_schedule: linear
+late_sample_schedule_curve: 2.0
+cfg_dropout_rate: 0.1
+validation_sample_steps: 50
+validation_cfg_strength: 2.0
+test_sample_steps: 200
+test_cfg_strength: 2.0
+uniform_loss_weight: true
+warmup_steps: 0
+
+encoder:
+  _target_: src.models.components.flow_matching_transformer.AudioSpectrogramTransformer
+  d_model: 512
+  n_heads: 8
+  n_layers: 12
+  n_conditioning_outputs: 12
+  patch_size: 16
+  patch_stride: 10
+  input_channels: 1
+  spec_shape: [128, 501]
+
+vector_field:
+  _target_: src.models.components.flow_matching_transformer.ApproxEquivTransformer
+  d_model: 512
+  conditioning_dim: ${model.encoder.d_model}
+  num_heads: 8
+  d_ff: 512
+  num_layers: 12
+  num_tokens: ${model.vector_field.projection.num_tokens}
+  learn_pe: false
+  learn_projection: true
+  pe_type: none
+  pe_penalty: 0.0
+  projection_penalty: 0.01
+  time_encoding: sinusoidal
+  norm: layer
+  skip_first_norm: false
+  adaln_mode: basic
+  zero_init: false
+  outer_residual: false
+  projection:
+    _target_: src.models.components.flow_matching_transformer.LearntProjection
+    d_model: ${model.vector_field.d_model}
+    d_token: ${model.vector_field.d_model}
+    num_params: 451
+    num_tokens: 128
+    initial_ffn: true
+    final_ffn: false
+
+denoise_space:
+  _target_: src.utils.dexed_denoise_space.DexedDenoiseSpace
+  config_path: configs/data/dexed_params_fm.yaml
+  scale_to_unit: true
+
+validation:
+  render_batches: 0
+  metrics:
+    wmfcc: true
+    mfcc13: true
+    mfcc40: true
+    mss: true
+    sot: true
+    rms: true
+    clap: true
+  nsynth_eval:
+    enable: false
+    batches: 0
+    seed: 1234
+    shuffle: false
+    shuffle_once: true
+    sample_size: 0
+    audio_root: dataset/nsynth/valid/audio
+
+renderer:
+  sample_rate: 44100
+  target_duration: 5.0
+  fadeout: 0.1
+  release_ratio: 0.5
+  dexed:
+    synth_path: synth/Dexed.vst3
+    block_size: 512
+    note_on_delay: 0.01
+  surge:
+    plugin_path: synth/Surge XT.vst3
+    preset_path: presets/surge-base.vstpreset
+    block_size: 2048
+    channels: 2
+    note_on_delay: 0.01
+    reset_between_renders: true
+    runtime_flush_seconds: 1.0
+    preset_load_flush_seconds: 32.0
+    post_param_flush_seconds: 32.0
+    post_render_flush_seconds: 32.0
+
+training_schedule:
+  max_steps: 3000000
+  log_every_n_steps: 1
+  val_check_interval: 5000
+  check_val_every_n_epoch: null
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.CosineAnnealingLR
+  _partial_: false
+  T_max: ${model.training_schedule.max_steps}
+  eta_min: 0.000001

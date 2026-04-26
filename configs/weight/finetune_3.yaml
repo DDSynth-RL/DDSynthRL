@@ -1,0 +1,120 @@
+# Token-level loss weights for autoregressive matching.
+# Created by Myself, modified from finetune_1.yaml.
+
+# MIDI_NOTE: 3.5
+# MIDI_DURATION: 2.0
+# ALGORITHM: 1.8
+# FEEDBACK: 1.5
+#
+# - Keys should match `configs/order/autoregressive_order.yaml` tokens.
+# - `default` is used for any token not explicitly listed in `weights`.
+# - Set `validate: true` to fail-fast on unknown keys.
+default: 1.0
+validate: true
+weights:
+  MIDI_NOTE: 3.5
+  MIDI_VELOCITY: 1.0
+  MIDI_DURATION: 2.0
+  ALGORITHM: 1.8
+  FEEDBACK: 1.5
+  OSC KEY SYNC: 1.0
+  OP1 MODE: 1.0
+  OP1 F COARSE: 1.0
+  OP1 F FINE: 1.0
+  OP1 OSC DETUNE: 1.0
+  OP1 EG LEVEL 1: 1.0
+  OP1 EG LEVEL 2: 1.0
+  OP1 EG LEVEL 3: 1.0
+  OP1 EG LEVEL 4: 1.0
+  OP1 EG RATE 1: 1.0
+  OP1 EG RATE 2: 1.0
+  OP1 EG RATE 3: 1.0
+  OP1 EG RATE 4: 1.0
+  OP1 OUTPUT LEVEL: 1.0
+  OP1 A MOD SENS.: 1.0
+  OP2 MODE: 1.0
+  OP2 F COARSE: 1.0
+  OP2 F FINE: 1.0
+  OP2 OSC DETUNE: 1.0
+  OP2 EG LEVEL 1: 1.0
+  OP2 EG LEVEL 2: 1.0
+  OP2 EG LEVEL 3: 1.0
+  OP2 EG LEVEL 4: 1.0
+  OP2 EG RATE 1: 1.0
+  OP2 EG RATE 2: 1.0
+  OP2 EG RATE 3: 1.0
+  OP2 EG RATE 4: 1.0
+  OP2 OUTPUT LEVEL: 1.0
+  OP2 A MOD SENS.: 1.0
+  OP3 MODE: 1.0
+  OP3 F COARSE: 1.0
+  OP3 F FINE: 1.0
+  OP3 OSC DETUNE: 1.0
+  OP3 EG LEVEL 1: 1.0
+  OP3 EG LEVEL 2: 1.0
+  OP3 EG LEVEL 3: 1.0
+  OP3 EG LEVEL 4: 1.0
+  OP3 EG RATE 1: 1.0
+  OP3 EG RATE 2: 1.0
+  OP3 EG RATE 3: 1.0
+  OP3 EG RATE 4: 1.0
+  OP3 OUTPUT LEVEL: 1.0
+  OP3 A MOD SENS.: 1.0
+  OP4 MODE: 1.0
+  OP4 F COARSE: 1.0
+  OP4 F FINE: 1.0
+  OP4 OSC DETUNE: 1.0
+  OP4 EG LEVEL 1: 1.0
+  OP4 EG LEVEL 2: 1.0
+  OP4 EG LEVEL 3: 1.0
+  OP4 EG LEVEL 4: 1.0
+  OP4 EG RATE 1: 1.0
+  OP4 EG RATE 2: 1.0
+  OP4 EG RATE 3: 1.0
+  OP4 EG RATE 4: 1.0
+  OP4 OUTPUT LEVEL: 1.0
+  OP4 A MOD SENS.: 1.0
+  OP5 MODE: 1.0
+  OP5 F COARSE: 1.0
+  OP5 F FINE: 1.0
+  OP5 OSC DETUNE: 1.0
+  OP5 EG LEVEL 1: 1.0
+  OP5 EG LEVEL 2: 1.0
+  OP5 EG LEVEL 3: 1.0
+  OP5 EG LEVEL 4: 1.0
+  OP5 EG RATE 1: 1.0
+  OP5 EG RATE 2: 1.0
+  OP5 EG RATE 3: 1.0
+  OP5 EG RATE 4: 1.0
+  OP5 OUTPUT LEVEL: 1.0
+  OP5 A MOD SENS.: 1.0
+  OP6 MODE: 1.0
+  OP6 F COARSE: 1.0
+  OP6 F FINE: 1.0
+  OP6 OSC DETUNE: 1.0
+  OP6 EG LEVEL 1: 1.0
+  OP6 EG LEVEL 2: 1.0
+  OP6 EG LEVEL 3: 1.0
+  OP6 EG LEVEL 4: 1.0
+  OP6 EG RATE 1: 1.0
+  OP6 EG RATE 2: 1.0
+  OP6 EG RATE 3: 1.0
+  OP6 EG RATE 4: 1.0
+  OP6 OUTPUT LEVEL: 1.0
+  OP6 A MOD SENS.: 1.0
+  LFO WAVE: 1.0
+  LFO SPEED: 1.0
+  LFO DELAY: 1.0
+  LFO KEY SYNC: 1.0
+  P MODE SENS.: 1.0
+  LFO PM DEPTH: 1.0
+  LFO AM DEPTH: 1.0
+  PITCH EG LEVEL 1: 1.0
+  PITCH EG LEVEL 2: 1.0
+  PITCH EG LEVEL 3: 1.0
+  PITCH EG LEVEL 4: 1.0
+  PITCH EG RATE 1: 1.0
+  PITCH EG RATE 2: 1.0
+  PITCH EG RATE 3: 1.0
+  PITCH EG RATE 4: 1.0
+  EOS: 1.0

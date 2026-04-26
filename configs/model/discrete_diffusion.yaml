@@ -1,0 +1,83 @@
+_target_: src.models.discrete_diffusion_module.DiscreteDiffusionModule
+
+d_model: 512
+nhead: 8
+num_layers: 12
+dim_feedforward: 1024
+dropout: 0.1
+activation: gelu
+normalize_before: true
+order_path: null
+
+diffusion:
+  T: null
+  masking: bernoulli
+
+loss:
+  temperature: 0.2
+  label_smoothing: 1.0
+  midi_label_smoothing: 0.05
+  midi_label_smoothing_apply: [true, true, true]
+  gaussian_sigma: 0.02
+  uncertainty_weighting: false
+
+validation:
+  render_batches: 0
+  log_per_param_loss: false
+  dd_normalized_entropy: false
+  dd_normalized_confidence: false
+  metrics:
+    wmfcc: true
+    mfcc13: false
+    mfcc40: false
+    mss: false
+    sot: false
+    rms: false
+    clap: false
+  nsynth_eval:
+    enable: false
+    batches: 0
+    seed: 1234
+    shuffle: false
+    shuffle_once: true
+    sample_size: 0
+    audio_root: dataset/nsynth/valid/audio
+
+renderer:
+  sample_rate: 44100
+  target_duration: 5.0
+  fadeout: 0.1
+  release_ratio: 0.5
+  dexed:
+    synth_path: synth/Dexed.vst3
+    block_size: 512
+    note_on_delay: 0.01
+  surge:
+    plugin_path: synth/Surge XT.vst3
+    preset_path: presets/surge-base.vstpreset
+    block_size: 2048
+    channels: 2
+    note_on_delay: 0.01
+    reset_between_renders: true
+    runtime_flush_seconds: 1.0
+    preset_load_flush_seconds: 32.0
+    post_param_flush_seconds: 32.0
+    post_render_flush_seconds: 32.0
+
+training_schedule:
+  max_steps: 3000000
+  log_every_n_steps: 10
+  val_check_interval: 5000
+  check_val_every_n_epoch: null
+
+optimizer:
+  _target_: torch.optim.AdamW
+  _partial_: true
+  lr: 0.0002
+  weight_decay: 0.0001
+
+scheduler:
+  type: cosine_warmup
+  warmup_steps: 10000
+  start_factor: 0.2
+  eta_min: 0.000001

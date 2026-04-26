@@ -1,0 +1,2 @@
+root_dir: .
+output_dir: ${paths.root_dir}/outputs/${experiment.name}/${now:%Y-%m-%d_%H-%M-%S}

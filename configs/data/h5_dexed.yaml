@@ -1,0 +1,14 @@
+_target_: src.data.h5_synth_datamodule.H5SynthDataModule
+
+root: dataset/dexed
+token_order_path: configs/order/dexed_autoregressive_order.yaml
+read_audio: false
+val_read_audio: true
+test_read_audio: true
+
+training:
+  batch_size: 32
+  num_workers: 8
+  pin_memory: true
+  drop_last: false
+  persistent_workers: true

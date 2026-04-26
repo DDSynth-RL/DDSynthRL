@@ -1,0 +1,51 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# Local environments and secrets
+.env
+.venv/
+venv/
+env/
+.conda/
+
+# Experiment outputs, logs, and trackers
+/outputs/
+/logs/
+/render/
+/train.log
+*.log
+wandb/
+**/wandb/
+
+# Datasets and generated artifacts
+/data/
+/dataset/
+/tmp*/
+*.h5
+*.hdf5
+*.npz
+*.npy
+
+# Model checkpoints
+*.ckpt
+*.pt
+*.pth
+*.safetensors
+checkpoints/
+**/checkpoints/
+
+# Local synth plugin binaries
+/synth/*.vst3/
+!/synth/.gitkeep
+
+# Editor and OS metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

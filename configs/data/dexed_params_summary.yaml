@@ -1,0 +1,788 @@
+parameters:
+- index: 0
+  name: Cutoff
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 1
+  name: Resonance
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 2
+  name: Output
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 3
+  name: MonoMode
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 4
+  name: MASTER TUNE ADJ
+  mode: null
+  cardinality: 1
+  default: 0.5
+- index: 5
+  name: ALGORITHM
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 6
+  name: FEEDBACK
+  mode: cat
+  cardinality: 8
+  default: null
+- index: 7
+  name: OSC KEY SYNC
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 8
+  name: LFO SPEED
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 9
+  name: LFO DELAY
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 10
+  name: LFO PM DEPTH
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 11
+  name: LFO AM DEPTH
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 12
+  name: LFO KEY SYNC
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 13
+  name: LFO WAVE
+  mode: cat
+  cardinality: 6
+  default: null
+- index: 14
+  name: TRANSPOSE
+  mode: null
+  cardinality: 1
+  default: 0.5
+- index: 15
+  name: P MODE SENS.
+  mode: cat
+  cardinality: 8
+  default: null
+- index: 16
+  name: PITCH EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 17
+  name: PITCH EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 18
+  name: PITCH EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 19
+  name: PITCH EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 20
+  name: PITCH EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 21
+  name: PITCH EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 22
+  name: PITCH EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 23
+  name: PITCH EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 24
+  name: OP1 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 25
+  name: OP1 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 26
+  name: OP1 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 27
+  name: OP1 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 28
+  name: OP1 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 29
+  name: OP1 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 30
+  name: OP1 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 31
+  name: OP1 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 32
+  name: OP1 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 33
+  name: OP1 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 34
+  name: OP1 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 35
+  name: OP1 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 36
+  name: OP1 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 37
+  name: OP1 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 38
+  name: OP1 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 39
+  name: OP1 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 40
+  name: OP1 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 41
+  name: OP1 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 42
+  name: OP1 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 43
+  name: OP1 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 44
+  name: OP1 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 45
+  name: OP1 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 46
+  name: OP2 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 47
+  name: OP2 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 48
+  name: OP2 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 49
+  name: OP2 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 50
+  name: OP2 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 51
+  name: OP2 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 52
+  name: OP2 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 53
+  name: OP2 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 54
+  name: OP2 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 55
+  name: OP2 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 56
+  name: OP2 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 57
+  name: OP2 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 58
+  name: OP2 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 59
+  name: OP2 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 60
+  name: OP2 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 61
+  name: OP2 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 62
+  name: OP2 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 63
+  name: OP2 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 64
+  name: OP2 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 65
+  name: OP2 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 66
+  name: OP2 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 67
+  name: OP2 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 68
+  name: OP3 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 69
+  name: OP3 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 70
+  name: OP3 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 71
+  name: OP3 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 72
+  name: OP3 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 73
+  name: OP3 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 74
+  name: OP3 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 75
+  name: OP3 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 76
+  name: OP3 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 77
+  name: OP3 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 78
+  name: OP3 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 79
+  name: OP3 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 80
+  name: OP3 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 81
+  name: OP3 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 82
+  name: OP3 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 83
+  name: OP3 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 84
+  name: OP3 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 85
+  name: OP3 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 86
+  name: OP3 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 87
+  name: OP3 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 88
+  name: OP3 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 89
+  name: OP3 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 90
+  name: OP4 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 91
+  name: OP4 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 92
+  name: OP4 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 93
+  name: OP4 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 94
+  name: OP4 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 95
+  name: OP4 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 96
+  name: OP4 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 97
+  name: OP4 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 98
+  name: OP4 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 99
+  name: OP4 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 100
+  name: OP4 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 101
+  name: OP4 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 102
+  name: OP4 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 103
+  name: OP4 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 104
+  name: OP4 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 105
+  name: OP4 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 106
+  name: OP4 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 107
+  name: OP4 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 108
+  name: OP4 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 109
+  name: OP4 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 110
+  name: OP4 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 111
+  name: OP4 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 112
+  name: OP5 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 113
+  name: OP5 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 114
+  name: OP5 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 115
+  name: OP5 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 116
+  name: OP5 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 117
+  name: OP5 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 118
+  name: OP5 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 119
+  name: OP5 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 120
+  name: OP5 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 121
+  name: OP5 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 122
+  name: OP5 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 123
+  name: OP5 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 124
+  name: OP5 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 125
+  name: OP5 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 126
+  name: OP5 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 127
+  name: OP5 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 128
+  name: OP5 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 129
+  name: OP5 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 130
+  name: OP5 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 131
+  name: OP5 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 132
+  name: OP5 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 133
+  name: OP5 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+- index: 134
+  name: OP6 EG RATE 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 135
+  name: OP6 EG RATE 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 136
+  name: OP6 EG RATE 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 137
+  name: OP6 EG RATE 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 138
+  name: OP6 EG LEVEL 1
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 139
+  name: OP6 EG LEVEL 2
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 140
+  name: OP6 EG LEVEL 3
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 141
+  name: OP6 EG LEVEL 4
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 142
+  name: OP6 OUTPUT LEVEL
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 143
+  name: OP6 MODE
+  mode: cat
+  cardinality: 2
+  default: null
+- index: 144
+  name: OP6 F COARSE
+  mode: cat
+  cardinality: 32
+  default: null
+- index: 145
+  name: OP6 F FINE
+  mode: cat
+  cardinality: 25
+  default: null
+- index: 146
+  name: OP6 OSC DETUNE
+  mode: cat
+  cardinality: 15
+  default: null
+- index: 147
+  name: OP6 BREAK POINT
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 148
+  name: OP6 L SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 149
+  name: OP6 R SCALE DEPTH
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 150
+  name: OP6 L KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 151
+  name: OP6 R KEY SCALE
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 152
+  name: OP6 RATE SCALING
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 153
+  name: OP6 A MOD SENS.
+  mode: cat
+  cardinality: 4
+  default: null
+- index: 154
+  name: OP6 KEY VELOCITY
+  mode: null
+  cardinality: 1
+  default: 0.0
+- index: 155
+  name: OP6 SWITCH
+  mode: null
+  cardinality: 1
+  default: 1.0
+midi:
+  note_min: 24
+  note_classes: 73
+  velocity_classes: 128
+  duration_min: 0.2
+  duration_max: 3.0
+  duration_classes: 128

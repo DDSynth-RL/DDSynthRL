@@ -1,0 +1,10 @@
+# @package _global_
+
+defaults:
+  - ar_train_dexed
+  - override data: h5_surge
+  - override weight: default
+  - _self_
+
+experiment:
+  name: ar_surge

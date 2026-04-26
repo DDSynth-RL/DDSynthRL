@@ -1,0 +1,93 @@
+# @package _global_
+
+defaults:
+  - /logger: wandb
+  - /paths: default
+  - /hydra: default
+  - _self_
+
+task_name: finetune_grpo
+
+experiment:
+  name: dd_grpo
+
+seed: 1234
+tags: ["dev", "dd", "grpo"]
+
+logger:
+  wandb:
+    project: ddsynth-rl
+
+ckpt_path: null
+ref_ckpt_path: ${ckpt_path}
+trust_ckpt: true
+
+data:
+  train_audio_root: dataset/nsynth/train/audio
+  val_audio_root: dataset/nsynth/valid/audio
+  max_train_files: 0
+  max_val_files: 0
+  shuffle: true
+  val_shuffle_once: true
+  val_seed: 1234
+  spec:
+    n_fft: 1102
+    n_mels: 128
+    top_db: 80
+    use_db: true
+    normalize: false
+    hop_length: 441
+
+reward:
+  metric: wmfcc
+  sign: -1.0
+  failure: -1000.0
+  weights:
+    wmfcc: 1.2
+    clap: 8.0
+    crepe: 12.0
+    mss: 1.8
+    sot: 60.0
+    rms: 4.0
+  crepe:
+    enable: true
+    model: tiny
+    metric: cosine
+    return_similarity: false
+    hop_length: null
+    batch_size: null
+    pad: true
+
+grpo:
+  batch_size: 3
+  group_size: 8
+  renderer_workers: 8
+  updates: 150000
+  kl_coef: 0.1
+  optimizer:
+    lr: 5.0e-6
+    weight_decay: 0.0
+    betas: [0.9, 0.999]
+    eps: 1.0e-8
+  grad_clip_norm: 1.0
+  log_every: 10
+  eval_every: 200
+  eval_prompts: 512
+  use_checkpointing: true
+  save_last_every: 200
+
+sampling:
+  dd_midi_first: false
+  dd_normalized_entropy: true
+  dd_normalized_confidence: false
+  force_greedy_midi_only: false
+  force_greedy_special: false
+  token:
+    epsilon: 0.7
+    top_k: 16
+    min_prob: 0.1
+  pos:
+    epsilon: 0.7
+    top_k: 16
+    min_prob: 0.1
+    temperature: 1.0

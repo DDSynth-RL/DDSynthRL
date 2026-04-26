@@ -1,0 +1,58 @@
+# @package _global_
+
+defaults:
+  - data: h5_dexed
+  - model: discrete_diffusion
+  - trainer: default
+  - weight: finetune_3
+  - callbacks: default
+  - logger: wandb
+  - paths: default
+  - hydra: default
+  - _self_
+
+task_name: train
+
+experiment:
+  name: dd_dexed
+
+tags: ["dev", "discrete_diffusion"]
+
+train: true
+test: false
+ckpt_path: null
+seed: 1234
+optimized_metric: val/wmfcc
+
+trainer:
+  accelerator: auto
+  devices: 1
+  precision: 32-true
+  deterministic: true
+  gradient_clip_val: 1
+  limit_val_batches: 8
+
+model:
+  diffusion:
+    T: 105
+  validation:
+    render_batches: 8
+    log_per_param_loss: true
+    dd_normalized_entropy: false
+    dd_normalized_confidence: false
+    metrics:
+      wmfcc: true
+      mfcc13: true
+      mfcc40: true
+      mss: true
+      sot: true
+      rms: true
+      clap: true
+    nsynth_eval:
+      enable: true
+      batches: 8
+      seed: 1234
+      shuffle: false
+      shuffle_once: true
+      sample_size: 0
+      audio_root: dataset/nsynth/valid/audio

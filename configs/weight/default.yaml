@@ -1,0 +1,8 @@
+# Generic token-level loss weights.
+#
+# Keep this config synth-agnostic. Synth-specific weighting schemes should live
+# in separate configs (for example `finetune_3.yaml`) and be selected
+# explicitly.
+default: 1.0
+validate: true
+weights: {}

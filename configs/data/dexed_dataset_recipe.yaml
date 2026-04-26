@@ -1,0 +1,36 @@
+# Mirrors AR-Matching Dexed dataset packing defaults/config:
+# - src/data/preparation/dexed_dataset_packing.py
+# - src/data/preparation/dexed_dataset_packing.sh
+# - configs/data/dexed.yaml
+
+paths:
+  output_root: dataset/dexed
+  json_dir: dataset/dexed/raw/json
+  audio_dir: dataset/dexed/raw/audio
+  summary_path: configs/data/dexed_params_summary.yaml
+
+dataset:
+  num_samples: 0  # 0 = use all matching JSON/WAV stems
+  sample_rate: 44100
+  target_duration: 5.0
+  min_loudness: -55.0
+  seed: 1234
+  train_ratio: 0.9
+  val_ratio: 0.05
+  split_strategy: preset_group
+
+mel:
+  n_mels: 128
+  window_seconds: 0.025
+  frames_per_second: 100.0
+  window: hamming
+  power_to_db_ref: max
+
+midi:
+  keys:
+    - MIDI_NOTE
+    - MIDI_VELOCITY
+    - MIDI_DURATION
+
+runtime:
+  sample_batch_size: 32

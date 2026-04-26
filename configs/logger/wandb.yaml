@@ -1,0 +1,7 @@
+wandb:
+  _target_: lightning.pytorch.loggers.WandbLogger
+  project: ddsynth-rl
+  name: ${experiment.name}
+  save_dir: ${paths.output_dir}
+  log_model: false
+  mode: online

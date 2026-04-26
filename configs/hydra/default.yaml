@@ -1,0 +1,15 @@
+defaults:
+  - override hydra_logging: default
+  - override job_logging: default
+
+run:
+  dir: ${paths.output_dir}
+
+sweep:
+  dir: ${paths.output_dir}/multiruns/${now:%Y-%m-%d_%H-%M-%S}
+  subdir: ${hydra.job.num}
+
+job_logging:
+  handlers:
+    file:
+      filename: ${hydra.runtime.output_dir}/${task_name}.log
