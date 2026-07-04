@@ -41,7 +41,7 @@ checkpoints/
 **/checkpoints/
 
 # Local synth plugin binaries
-/synth/*.vst3/
+/synth/*
 !/synth/.gitkeep
 
 # Editor and OS metadata
