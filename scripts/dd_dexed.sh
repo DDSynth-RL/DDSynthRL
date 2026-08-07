@@ -9,10 +9,5 @@ PROJECT_ROOT="$(find_project_root "$SCRIPT_PATH")"
 PYTHON_BIN="$(resolve_python_bin)"
 
 cd "$PROJECT_ROOT"
-
-env PYTHONPATH="$PROJECT_ROOT" "$PYTHON_BIN" -m src.train --config-name dd_train_dexed \
-  ckpt_path=outputs/dd_dexed/2026-03-31_22-41-11/checkpoints/checkpoint_last.pt
-
-env PYTHONPATH="$PROJECT_ROOT" "$PYTHON_BIN" -m src.train --config-name dd_train_dexed \
-  seed=2026 \
-  experiment.name=dd_dexed_seed2026
+exec env PYTHONPATH="$PROJECT_ROOT" "$PYTHON_BIN" -m src.train \
+  --config-name dd_train_dexed "$@"

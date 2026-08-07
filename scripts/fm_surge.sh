@@ -9,9 +9,5 @@ PROJECT_ROOT="$(find_project_root "$SCRIPT_PATH")"
 PYTHON_BIN="$(resolve_python_bin)"
 
 cd "$PROJECT_ROOT"
-
-env PYTHONPATH="$PROJECT_ROOT" "$PYTHON_BIN" -m src.train --config-name fm_train_surge \
-  trainer.limit_val_batches=2 \
-  model.validation.render_batches=2 \
-  model.validation.nsynth_eval.batches=2 \
-  ckpt_path=outputs/fm_surge/2026-04-06_16-21-23/checkpoints/checkpoint_last.pt
+exec env PYTHONPATH="$PROJECT_ROOT" "$PYTHON_BIN" -m src.train \
+  --config-name fm_train_surge "$@"

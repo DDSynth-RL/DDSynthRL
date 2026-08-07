@@ -1,4 +1,4 @@
-"""Transformer layers adapted from SynthRL for autoregressive models."""
+"""Transformer layers adapted from DETR through SynthRL."""
 
 from __future__ import annotations
 
