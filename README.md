@@ -41,8 +41,7 @@ hf download MINNE-WU/DDSynth-RL --local-dir checkpoints/ddsynth-rl
 
 The Hugging Face repository contains supervised AR, flow-matching, and discrete
 diffusion checkpoints selected for in-domain and OOD evaluation, plus the two
-GRPO checkpoints. See its `manifest.json` and `SHA256SUMS` for exact selection
-criteria and file verification.
+GRPO checkpoints.
 
 ## Data
 
