@@ -1,7 +1,10 @@
 # Data provenance
 
-DDSynth-RL does not redistribute the processed Dexed dataset. The source preset
-database and upstream augmentation implementation are available from the
+DDSynth-RL includes the original `dataset/dexed/stats.npz` and
+`dataset/dexed/dataset_metadata.json` for inference with the released Dexed
+checkpoints. The full processed Dexed dataset (the HDF5 files) is not
+redistributed. The source preset database and upstream augmentation
+implementation are available from the
 official [SPINVAE-2 repository](https://github.com/gwendal-lv/spinvae2). That
 repository is licensed separately under AGPL-3.0.
 

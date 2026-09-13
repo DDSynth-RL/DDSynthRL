@@ -45,6 +45,16 @@ GRPO checkpoints.
 
 ## Data
 
+The inference assets for the released Dexed checkpoints are included in this
+repository at
+[`dataset/dexed/stats.npz`](dataset/dexed/stats.npz) and
+[`dataset/dexed/dataset_metadata.json`](dataset/dexed/dataset_metadata.json).
+`stats.npz` contains the training-set Mel mean and standard deviation; the
+metadata defines the frozen synthesizer parameter schema, MIDI ranges, and
+audio preprocessing settings. Use these files unchanged with the released
+checkpoints, including for single-WAV inference. Keep them at the paths above,
+relative to the project root.
+
 DDSynth-RL expects the following project-relative layout:
 
 ```text
@@ -61,8 +71,10 @@ dataset/
     └── test/audio/*.wav
 ```
 
-The processed Dexed dataset is not redistributed by this repository. Download
-the source preset resources from the official
+The full processed Dexed dataset (the HDF5 files) is not redistributed by this
+repository. The inference assets above are included; the evaluation command
+below additionally requires `dataset/dexed/test.h5` and the NSynth test audio.
+Download the source preset resources from the official
 [SPINVAE-2 repository](https://github.com/gwendal-lv/spinvae2). The paper data
 uses SPINVAE-2's four-way preset variation strategy and renders each variation
 under four randomized MIDI note, velocity, and duration conditions. See

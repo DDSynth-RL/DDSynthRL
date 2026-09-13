@@ -25,12 +25,18 @@ wandb/
 
 # Datasets and generated artifacts
 /data/
-/dataset/
+/dataset/*
+!/dataset/dexed/
+/dataset/dexed/*
 /tmp*/
 *.h5
 *.hdf5
 *.npz
 *.npy
+
+# Inference assets for the released Dexed checkpoints
+!/dataset/dexed/dataset_metadata.json
+!/dataset/dexed/stats.npz
 
 # Model checkpoints
 *.ckpt
